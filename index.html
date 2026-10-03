@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 8 Places to Visit in Karnataka</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap');
+
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0c4a6e;
+            --sky: #0ea5e9;
+            --sky-rgb: 2, 132, 199;
+            --mist: #e0f2fe;
+            --soft: #f1f5f9;
+            --border: #dbeafe;
+            --text: #0f2a3d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f9fd 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 0 130px;
+            background: linear-gradient(180deg, var(--mist) 0%, #f4f9fd 100%);
+            border-radius: 0 0 50% 50% / 0 0 60px 60px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 12% 30%, rgba(14, 165, 233, 0.18), transparent 35%),
+                radial-gradient(circle at 88% 20%, rgba(14, 165, 233, 0.12), transparent 30%);
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--primary-dark);
+        }
+        .hero h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            margin: 18px auto 0;
+            border-radius: 4px;
+            background: var(--sky);
+        }
+        .hero p { font-size: 1.15rem; font-weight: 300; margin-top: 12px; color: #35607a; }
+
+        main { margin-top: -50px; position: relative; z-index: 2; padding-bottom: 60px; }
+
+        .toc-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 35px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(var(--sky-rgb), 0.08);
+            margin-bottom: 50px;
+        }
+        .toc-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            font-size: 1.8rem;
+        }
+
+        .places-list {
+            list-style: none;
+            counter-reset: place;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 12px;
+        }
+        .places-list li { counter-increment: place; }
+        .places-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            background: var(--soft);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .places-list a::before {
+            content: counter(place);
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.85rem;
+        }
+        .places-list a:hover { background: var(--mist); color: var(--primary-dark); }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+        }
+        .place-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 22px;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--sky);
+            box-shadow: 0 8px 24px rgba(var(--sky-rgb), 0.08);
+            transition: box-shadow 0.3s ease;
+        }
+        .place-card:hover { box-shadow: 0 14px 34px rgba(var(--sky-rgb), 0.18); }
+        .place-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin: 2px 0 16px;
+        }
+        .map-container {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            line-height: 0;
+        }
+        .map-container iframe { width: 100%; height: 260px; border: 0; }
+
+        @media (max-width: 600px) {
+            .hero { padding: 70px 0 100px; }
+            .places-grid { grid-template-columns: 1fr; }
+            .toc-card { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Top 8 Places to Visit in Karnataka</h1>
+            <p>Explore the rich heritage, landscapes, and iconic destinations of Karnataka.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="toc-card">
+            <h2>Quick Navigation</h2>
+            <ol class="places-list">
+                <li><a href="#hampi">Hampi</a></li>
+                <li><a href="#mysore">Mysore Palace</a></li>
+                <li><a href="#agumbe">Agumbe Ghat</a></li>
+                <li><a href="#badami">Badami Caves</a></li>
+                <li><a href="#sakleshpur">Sakleshpur</a></li>
+                <li><a href="#bannerghatta">Bannerghatta National Park</a></li>
+                <li><a href="#dharmasthala">Dharmasthala</a></li>
+                <li><a href="#kudremukh">Kudremukh</a></li>
+            </ol>
+        </nav>
+
+        <section class="places-grid">
+
+            <article class="place-card" id="hampi">
+                <h2>1. Hampi</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30782.50394373677!2d76.43053214496274!3d15.332394755678802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb77fd95d4be823%3A0x6e52e05076df36b8!2sHampi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1790960383389!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="mysore">
+                <h2>2. Mysore Palace</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3898.157726673952!2d76.6525999750653!3d12.30516298795229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf701103f9a1f9%3A0xc37fbae2a124da0d!2sMysuru%20Palace!5e0!3m2!1sen!2sin!4v1790958726322!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="agumbe">
+                <h2>3. Agumbe Ghat</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31035.801697180825!2d75.07202606180276!3d13.506402909042984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb66fd4553d1df%3A0xe18a102e325d46dc!2sAgumbe%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1790958937378!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="badami">
+                <h2>4. Badami Caves</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.8240578611562!2d75.6815354751327!3d15.918285784739608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8870e9e90bcdb%3A0xf9bf01cd4bc603e4!2sBadami%20Cave%20Temples!5e0!3m2!1sen!2sin!4v1790960482931!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="sakleshpur">
+                <h2>5. Sakleshpur</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62214.18970790882!2d75.74965857361471!3d12.947079315542512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba526157a5ffa5d%3A0xfb6485aceb860292!2sSakleshpura%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1790960585884!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="bannerghatta">
+                <h2>6. Bannerghatta National Park</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.6578296465864!2d77.5763941!3d12.800708400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ba87f09fc55%3A0x96b24101b2a3dcd9!2sBannerughatta%20National%20Park!5e0!3m2!1sen!2sin!4v1790960627534!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="dharmasthala">
+                <h2>7. Dharmasthala</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62212.49431000093!2d75.3719036!3d12.9538692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4c879ec0d1f0f%3A0x165b33719d1e3337!2sDaramasthala%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1790960683972!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+            <article class="place-card" id="kudremukh">
+                <h2>8. Kudremukh</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62149.337453594366!2d75.2432344!3d13.2043607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbb494b943a3a31%3A0xe39c880e690c3ffb!2sKudremukh%2C%20Karnataka%20577124!5e0!3m2!1sen!2sin!4v1790960728780!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+</body>
+</html>
